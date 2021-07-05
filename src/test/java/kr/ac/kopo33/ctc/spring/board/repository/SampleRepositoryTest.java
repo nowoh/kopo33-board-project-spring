@@ -15,15 +15,15 @@ public class SampleRepositoryTest {
   private SampleRepository sampleRepository;
   
   @Test
-  void contextLoads() {
+  public void findAll() {
     Map<String, Object> filter = new HashMap<String, Object>();
-    filter.put("title", "3");
+    filter.put("title", "이호원");
     
-    PageRequest pageable = PageRequest.of(0, 10);
-    Page<Sample> page = sampleRepository.findAllByTitle(SampleSpecs.search(filter), pageable);
-    
-    for (Sample sample: page) {
-      System.out.println(sample.getTitle());
-    }
+    PageRequest pageable = PageRequest.of(0,10);
+//    Page<Sample> page = sampleRepository.findAllByTitle(SampleSpecs.search(filter), pageable);
+//    
+//    for(Sample s : page) {
+//      System.out.println(s.getTitle());
+//    }
   }
 }

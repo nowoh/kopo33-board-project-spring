@@ -18,5 +18,5 @@ public interface SampleRepository extends JpaRepository<Sample, Long>, JpaSpecif
   
   Page<Sample> findAllByTitle(String title, Pageable pageable);
   
-  List<Sample> findByAllTitle(String title);
+  List<Sample> findAllByTitle(String title);
 }

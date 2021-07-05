@@ -44,7 +44,7 @@ public class SampleController {
    @RequestMapping(value = "/sample/all")
    @ResponseBody
    public List<Sample> All(Model model) {
-       List<Sample> all = sampleRepository.findByAllTitle("이호원");
+       List<Sample> all = sampleRepository.findAllByTitle("이호원");
      return all;
    }
 }
