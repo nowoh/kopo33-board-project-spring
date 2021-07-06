@@ -18,5 +18,6 @@ public interface SampleRepository extends JpaRepository<Sample, Long>, JpaSpecif
   
   Page<Sample> findAllByTitle(String title, Pageable pageable);
   
+//  @Query(value="select * from sample;")
   List<Sample> findAllByTitle(String title);
 }

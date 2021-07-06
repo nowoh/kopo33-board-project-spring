@@ -2,6 +2,7 @@ package kr.ac.kopo33.ctc.spring.board.repository.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,11 +19,24 @@ public class SampleMapperTest {
   @Autowired
   SampleMapper sampleMapper;
 
+//  @Test
+//  public void findAll() {
+//    List<Sample> samples = sampleMapper.findAll();
+//
+//    for (Sample s : samples) {
+//      logger.info(s.getTitle());
+//    }
+//  }
+  
   @Test
-  public void findAll() {
-    List<Sample> samples = sampleMapper.findAll();
-
-    for (Sample s : samples) {
+  public void findAllByCondition() {
+    SampleCondition sampleCondition = new SampleCondition();
+    sampleCondition.setTitle("이호원");
+    
+    RowBounds rowBounds = new RowBounds(0, 10);
+    
+    List<Sample> samples = sampleMapper.findAllByCondition(sampleCondition, rowBounds);
+    for(Sample s : samples) {
       logger.info(s.getTitle());
     }
   }

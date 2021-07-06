@@ -47,4 +47,5 @@ public class SampleController {
        List<Sample> all = sampleRepository.findAllByTitle("이호원");
      return all;
    }
+   
 }
