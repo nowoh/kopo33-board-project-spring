@@ -19,14 +19,14 @@ public class SampleMapperTest {
   @Autowired
   SampleMapper sampleMapper;
 
-//  @Test
-//  public void findAll() {
-//    List<Sample> samples = sampleMapper.findAll();
-//
-//    for (Sample s : samples) {
-//      logger.info(s.getTitle());
-//    }
-//  }
+  @Test
+  public void findAll() {
+    List<Sample> samples = sampleMapper.findAll();
+
+    for (Sample s : samples) {
+      logger.info(s.getTitle());
+    }
+  }
   
   @Test
   public void findAllByCondition() {

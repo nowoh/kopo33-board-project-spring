@@ -1,9 +1,9 @@
 package kr.ac.kopo33.ctc.spring.board.web;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Test;
@@ -23,7 +23,7 @@ public class SampleControllerTest {
   private MockMvc mockMvc;
   
   @Test
-  public void shouldReturnDefaultMessage() {
+  public void shouldReturnDefaultMessage() throws Exception {
     this.mockMvc.perform(get("/sample/findAll")).andDo(print())
       .andExpect(status().isOk())
       .andExpect(content().string(containsString("title")));
