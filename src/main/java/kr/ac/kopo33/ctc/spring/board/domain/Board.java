@@ -18,7 +18,7 @@ public class Board {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
   @Column
-  private Long id;
+  private int id;
   private String title;
   
   @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="board")
@@ -30,10 +30,10 @@ public class Board {
     boardItems.add(BI);
   }
   
-  public Long getId() {
+  public int getId() {
     return id;
   }
-  public void setId(Long id) {
+  public void setId(int id) {
     this.id = id;
   }
   public String getTitle() {

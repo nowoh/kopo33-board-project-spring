@@ -51,14 +51,14 @@ public class BoardItemRepositoryTest {
   
 //  @Test
 //  void selectAll1() {
-//    Optional<Board> boardOptional = boardRepository.findById(18L);
+//    Optional<Board> boardOptional = boardRepository.findById(2);
 //    if (boardOptional.isPresent()) {
 //      Board board = boardOptional.get();
 //      Hibernate.initialize(board.getBoardItems());
 //      System.out.println(board.getTitle());
 //    }
 //  }
-//  
+  
 //  @Test
 //  void selectAll2() {
 //    List<BoardItem> boardItems = boardItemRepository.findAll();
@@ -67,7 +67,7 @@ public class BoardItemRepositoryTest {
 //    }
 //  }
 //  
-//  @Test
+////  @Test
 //  void selectOne1() {
 //    Optional<Board> boardOptional = boardRepository.findById(4L);
 //    if (boardOptional.isPresent()) {
@@ -75,9 +75,9 @@ public class BoardItemRepositoryTest {
 //      System.out.println(board.getTitle());
 //    }
 //  }
-//  
+  
 //  @Test
 //  void deleteOne() {
-//    boardRepository.deleteById(15L);
+//    boardRepository.deleteById(1);
 //  }
 }

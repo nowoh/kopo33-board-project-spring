@@ -15,7 +15,7 @@ public class BoardItem {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
   @Column
-  private Long id;
+  private int id;
   
   @Column
   private String title;
@@ -33,7 +33,7 @@ public class BoardItem {
   private String writer;
   
   @Column
-  private Long fk_board_id;
+  private int fk_board_id;
   
   @ManyToOne(optional=false)
   @JoinColumn(name="board_id")
@@ -45,11 +45,11 @@ public class BoardItem {
     return result;
   }
 
-  public Long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
@@ -93,11 +93,11 @@ public class BoardItem {
     this.writer = writer;
   }
 
-  public Long getFk_board_id() {
+  public int getFk_board_id() {
     return fk_board_id;
   }
 
-  public void setFk_board_id(Long fk_board_id) {
+  public void setFk_board_id(int fk_board_id) {
     this.fk_board_id = fk_board_id;
   }
 
