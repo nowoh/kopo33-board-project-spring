@@ -1,6 +1,7 @@
 package kr.ac.kopo33.ctc.spring.board.domain;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.joda.time.LocalDateTime;
 
 @Entity
 public class BoardItem {
@@ -20,7 +23,7 @@ public class BoardItem {
   @Column
   private String title;
   
-  @Column
+  @Column(columnDefinition="DATE NOT NULL")
   private Date date;
   
   @Column
@@ -31,9 +34,6 @@ public class BoardItem {
   
   @Column
   private String writer;
-  
-  @Column
-  private int fk_board_id;
   
   @ManyToOne(optional=false)
   @JoinColumn(name="board_id")
@@ -91,14 +91,6 @@ public class BoardItem {
 
   public void setWriter(String writer) {
     this.writer = writer;
-  }
-
-  public int getFk_board_id() {
-    return fk_board_id;
-  }
-
-  public void setFk_board_id(int fk_board_id) {
-    this.fk_board_id = fk_board_id;
   }
 
   public Board getBoard() {

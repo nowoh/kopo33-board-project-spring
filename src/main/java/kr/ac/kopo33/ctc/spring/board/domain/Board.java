@@ -21,8 +21,9 @@ public class Board {
   private int id;
   private String title;
   
-  @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="board")
-  //fetch -> fk 연결해서 보드 지워지면 게시글 같이 지워지는 것과 같음 default는 eager가 아닌 lazy
+  @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="board")
+  //cascade -> boardItem 연결되어 같이 지워짐
+  //fetch -> fk 연결해서 EAGER는 다 같이 불러옴 default는 eager가 아닌 lazy
   private List<BoardItem> boardItems;
   
   public void addBoardItems(BoardItem BI) {
