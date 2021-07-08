@@ -11,8 +11,8 @@ import kr.ac.kopo33.ctc.spring.board.domain.Board;
 
 @Repository
 public interface BoardRepository extends JpaRepository<Board, Integer> {
-//  List<Board> findAllByTitle(String title);
-//  
+//  List<Board> findAllById(int id);
+  
 //  List<Board> findByIdAndTitle(int id, String title);
 //  
 //  @Query("select b from Board b where title=:title")
