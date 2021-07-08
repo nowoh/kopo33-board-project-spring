@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import org.joda.time.LocalDateTime;
 
 @Entity
-public class BoardItem {
+public class BoardItem extends BaseTimeEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
   @Column
@@ -22,9 +22,6 @@ public class BoardItem {
   
   @Column
   private String title;
-  
-  @Column(columnDefinition="DATE NOT NULL")
-  private Date date;
   
   @Column
   private String content;
@@ -59,14 +56,6 @@ public class BoardItem {
 
   public void setTitle(String title) {
     this.title = title;
-  }
-
-  public Date getDate() {
-    return date;
-  }
-
-  public void setDate(Date date) {
-    this.date = date;
   }
 
   public String getContent() {

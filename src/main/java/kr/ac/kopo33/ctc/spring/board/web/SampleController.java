@@ -20,28 +20,28 @@ public class SampleController {
    @Autowired
    private SampleRepository sampleRepository;
    
-   @RequestMapping(value = "/sample/list")
-   @ResponseBody
-   public List<Sample> list(Model model) {
-     return sampleRepository.findAll();
-   }
+//   @RequestMapping(value = "/sample/list")
+//   @ResponseBody
+//   public List<Sample> list(Model model) {
+//     return sampleRepository.findAll();
+//   }
+//   
+//   @RequestMapping(value = "/sample/pageable")
+//   @ResponseBody
+//   public List<Sample> pageable(Model model) {
+//     PageRequest pageable = PageRequest.of(0, 1);
+//     Page<Sample> page = sampleRepository.findAll(pageable);
+//     return page.getContent();
+//   }
+//   
+//   @RequestMapping(value = "/sample/filter")
+//   @ResponseBody
+//   public Optional<Sample> filter(Model model) {
+//     Optional<Sample> filtering = sampleRepository.findOneByTitle("이호원");
+//     return filtering;
+//   }
    
-   @RequestMapping(value = "/sample/pageable")
-   @ResponseBody
-   public List<Sample> pageable(Model model) {
-     PageRequest pageable = PageRequest.of(0, 1);
-     Page<Sample> page = sampleRepository.findAll(pageable);
-     return page.getContent();
-   }
-   
-   @RequestMapping(value = "/sample/filter")
-   @ResponseBody
-   public Optional<Sample> filter(Model model) {
-     Optional<Sample> filtering = sampleRepository.findOneByTitle("이호원");
-     return filtering;
-   }
-   
-   @RequestMapping(value = "/sample/all")
+   @RequestMapping(value = "/sample/findAll")
    @ResponseBody
    public List<Sample> All(Model model) {
        List<Sample> all = sampleRepository.findAllByTitle("이호원");

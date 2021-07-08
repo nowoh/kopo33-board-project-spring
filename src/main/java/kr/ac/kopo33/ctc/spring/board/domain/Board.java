@@ -21,9 +21,11 @@ public class Board {
   private int id;
   private String title;
   
-  @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="board")
   //cascade -> boardItem 연결되어 같이 지워짐
   //fetch -> fk 연결해서 EAGER는 다 같이 불러옴 default는 eager가 아닌 lazy
+  //lazy로 하는 것이 일반적, 안정적 //lazy는 지연 eager 바로.
+  //transaction을 사용하면 메소드가 끝날 때까지 세션이 닫히지 않음
+  @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="board")
   private List<BoardItem> boardItems;
   
   public void addBoardItems(BoardItem BI) {
