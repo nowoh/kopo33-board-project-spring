@@ -23,8 +23,8 @@ public class BoardController {
     
     @RequestMapping(value = "/boardList")
     public String boardList(Model model) {
-      Board board = boardRepository.findAll().get();
-      model.addAttribute("name", "홍길동");
+      List<Board> boardLists = boardRepository.findAll();
+      model.addAttribute("boardLists", boardLists);
       return "boardList";
     }
 }
