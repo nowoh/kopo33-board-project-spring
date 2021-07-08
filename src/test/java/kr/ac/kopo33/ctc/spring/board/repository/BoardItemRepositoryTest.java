@@ -65,7 +65,7 @@ public class BoardItemRepositoryTest {
     boardRepository.save(board2);
   }
   
-  @Test
+//  @Test
   void selectAll1() {
     Optional<Board> boardOptional = boardRepository.findById(2);
     if (boardOptional.isPresent()) {
@@ -110,6 +110,17 @@ public class BoardItemRepositoryTest {
 //  @Test
   void deleteOne2() {
     boardItemRepository.deleteById(14);
+  }
+  
+  //update test
+  @Test
+  void update() {
+    Optional<BoardItem> boardItemOptional = boardItemRepository.findById(2);
+    if (boardItemOptional.isPresent()) {
+      BoardItem boardItem = boardItemOptional.get();
+      boardItem.setContent("안녕하시오");
+      boardItemRepository.save(boardItem);
+    }
   }
   
   

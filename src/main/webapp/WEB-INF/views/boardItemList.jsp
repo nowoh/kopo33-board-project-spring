@@ -7,6 +7,7 @@
 <title>boardItemList</title>
 </head>
 <body>
-
+This is title where id = 2\
+title = ${boardItem.title }
 </body>
 </html>
