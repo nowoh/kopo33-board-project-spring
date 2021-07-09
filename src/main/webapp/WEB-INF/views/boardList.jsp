@@ -14,10 +14,12 @@
 			<td>번호</td>
 			<td>게시판</td>
 		</tr>
-		<c:forEach items="${boardLists}" var="boardLists">
+		<c:forEach var="boardLists" items="${boardLists}">
 			<tr>
 				<td>${boardLists.id}</td>
-				<td>${boardLists.title}</td>
+				<td>
+					${boardLists.title}
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

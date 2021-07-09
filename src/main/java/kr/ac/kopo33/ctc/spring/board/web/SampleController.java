@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo33.ctc.spring.board.domain.Sample;
 import kr.ac.kopo33.ctc.spring.board.repository.SampleRepository;
+import kr.ac.kopo33.ctc.spring.board.service.SampleService;
 
 @Controller
 public class SampleController {
 
    @Autowired
    private SampleRepository sampleRepository;
+   
+   @Autowired
+   private SampleService sampleService;
    
    @RequestMapping(value = "/sample/list")
    @ResponseBody
@@ -46,6 +50,18 @@ public class SampleController {
    public List<Sample> All(Model model) {
      List<Sample> all = sampleRepository.findAllByTitle("이호원");
      return all;
+   }
+   
+   @RequestMapping(value = "/sample/noTransactional")
+   @ResponseBody
+   public String noTransactional() {
+     return sampleService.testNoTransactional();
+   }
+   
+   @RequestMapping(value = "/sample/transactional")
+   @ResponseBody
+   public String transactional() {
+     return sampleService.testTransactional();
    }
    
 }
