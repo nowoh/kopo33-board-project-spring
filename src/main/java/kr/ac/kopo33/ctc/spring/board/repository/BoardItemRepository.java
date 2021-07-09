@@ -20,6 +20,10 @@ public interface BoardItemRepository extends JpaRepository<BoardItem, Integer> {
   @Query("select t from BoardItem t where content like concat('%', :searchString , '%')")
   Page<BoardItem> findAllSearch(@Param("searchString") String searchString, Pageable pageable);
   
+  //board_id에 맞는 boardItem list
+  List<BoardItem> findAllByBoard_IdOrderByIdDesc(int board_id);
   
+  //검색에서 사용
   List<BoardItem> findAllByTitle(String string);
+  List<BoardItem> findAllByContent(String string);
 }

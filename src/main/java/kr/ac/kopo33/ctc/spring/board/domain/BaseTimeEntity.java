@@ -40,5 +40,10 @@ public class BaseTimeEntity {
   public String getModifiedDate() {
     return modifiedDate;
   }
+  
+  public String getBoardItemDate() {
+    String boardItemDate = modifiedDate.substring(2, 10);
+    return boardItemDate;
+  }
 
 }

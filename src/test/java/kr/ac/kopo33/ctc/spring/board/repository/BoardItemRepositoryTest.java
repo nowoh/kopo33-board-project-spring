@@ -1,21 +1,14 @@
 package kr.ac.kopo33.ctc.spring.board.repository;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.hibernate.Hibernate;
-import org.joda.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import kr.ac.kopo33.ctc.spring.board.domain.Board;
@@ -32,14 +25,13 @@ public class BoardItemRepositoryTest {
   @Autowired
   private BoardItemRepository boardItemRepository;
   
-//  @Test   
+  @Test   
   void create() {
-    Date date = new Date();
-    Board board1 = new Board();
-    board1.setTitle("title1");
+    Optional<Board> boardOptional = boardRepository.findById(1);
+    Board board1 = boardOptional.get();
     
-    Board board2 = new Board();
-    board2.setTitle("title2");
+//    Board board2 = new Board();
+//    board2.setTitle("title2");
     
     BoardItem boardItem1 = new BoardItem();
     boardItem1.setTitle("boardItem1");
@@ -54,15 +46,72 @@ public class BoardItemRepositoryTest {
     boardItem2.setWriter("이호투");
     boardItem2.setBoard(board1);
     
+    BoardItem boardItem3 = new BoardItem();
+    boardItem3.setTitle("boardItem3");
+    boardItem3.setContent("나는 boardItem3");
+    boardItem3.setWriter("이호삼");
+    boardItem3.setBoard(board1);
+    
+    BoardItem boardItem4 = new BoardItem();
+    boardItem4.setTitle("boardItem4");
+    boardItem4.setContent("나는 boardItem4");
+    boardItem4.setWriter("이호사");
+    boardItem4.setBoard(board1);
+    
+    BoardItem boardItem5 = new BoardItem();
+    boardItem5.setTitle("boardItem5");
+    boardItem5.setContent("나는 boardItem5");
+    boardItem5.setWriter("이호오");
+    boardItem5.setBoard(board1);
+    
+    BoardItem boardItem6 = new BoardItem();
+    boardItem6.setTitle("boardItem6");
+    boardItem6.setContent("나는 boardItem6");
+    boardItem6.setWriter("이호육");
+    boardItem6.setBoard(board1);
+    
+    BoardItem boardItem7 = new BoardItem();
+    boardItem7.setTitle("boardItem7");
+    boardItem7.setContent("나는 boardItem7");
+    boardItem7.setWriter("이호칠");
+    boardItem7.setBoard(board1);
+   
+    BoardItem boardItem8 = new BoardItem();
+    boardItem8.setTitle("boardItem8");
+    boardItem8.setContent("나는 boardItem8");
+    boardItem8.setWriter("이호팔");
+    boardItem8.setBoard(board1);
+    
+    BoardItem boardItem9 = new BoardItem();
+    boardItem9.setTitle("boardItem9");
+    boardItem9.setContent("나는 boardItem9");
+    boardItem9.setWriter("이호구");
+    boardItem9.setBoard(board1);
+    
+    BoardItem boardItem10 = new BoardItem();
+    boardItem10.setTitle("boardItem10");
+    boardItem10.setContent("나는 boardItem10");
+    boardItem10.setWriter("이호십");
+    boardItem10.setBoard(board1);
+    
     
     List<BoardItem> list = new ArrayList<>();
     list.add(boardItem1);
     list.add(boardItem2);
+    list.add(boardItem3);
+    list.add(boardItem4);
+    list.add(boardItem5);
+    list.add(boardItem6);
+    list.add(boardItem7);
+    list.add(boardItem8);
+    list.add(boardItem9);
+    list.add(boardItem10);
     
-    board2.setBoardItems(list);
+    board1.setBoardItems(list);
+//    board2.setBoardItems(list);
     
     boardRepository.save(board1);
-    boardRepository.save(board2);
+//    boardRepository.save(board2);
   }
   
 //  @Test
@@ -113,7 +162,7 @@ public class BoardItemRepositoryTest {
   }
   
   //update test
-  @Test
+//  @Test
   void update() {
     Optional<BoardItem> boardItemOptional = boardItemRepository.findById(2);
     if (boardItemOptional.isPresent()) {
