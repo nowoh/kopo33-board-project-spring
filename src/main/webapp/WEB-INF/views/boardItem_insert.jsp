@@ -99,7 +99,7 @@
         <td><textarea name="content" class="input" id="content" cols="60" rows="15" required></textarea></td>
       </tr>
     </table>
-    <button type="submit" class="btt" onclick="javascript: form.action='gongji_write.jsp';">글쓰기 <i class="fas fa-pen"></i></button>
+    <button type="submit" class="btt" onclick="javascript: form.action='';">글쓰기 <i class="fas fa-pen"></i></button>
     <button type="button" class="btt" onclick="location.href='/boardItemList'">취소 <i class="fas fa-times"></i></button>
   </span>
 </form>

@@ -27,4 +27,7 @@ public class BoardItemController {
     model.addAttribute("boardItemLists", boardItemLists);
     return "boardItemList";
   }
+  
+//  @RequestMapping(value = "/boardItem_insert")
+//  public 
 }

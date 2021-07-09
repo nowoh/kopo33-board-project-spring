@@ -148,7 +148,7 @@ button:hover {
 		<input type="text" name="search" id="search" class="search"	maxlength="50" value="" required>
 		<button class="search" id="btt"	onclick="javascript: form.action='gongji_search.jsp';">검색 <i class="fas fa-search"></i></button>
 		
-		<button type=button id="button"	onclick="location.href='/SpringBoard/boardItem_insert'">글쓰기 <i class="fas fa-pen"></i></button>
+		<button type=button id="button"	onclick="boardItem_insert">글쓰기 <i class="fas fa-pen"></i></button>
 		<br><br>
 	</span>
 </form>
